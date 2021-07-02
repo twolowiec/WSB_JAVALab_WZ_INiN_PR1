@@ -26,35 +26,37 @@ public class Main {
         me.firstName = "Tomasz";
         me.lastName = "Wołowiec";
 
-        System.out.println(me.pet.species);
+        Car passeratti = new Car("Volkswagen", "Passat");
+        me.personal = passeratti;
 
-        dog.feed();
-	    dog.feed();
-	    dog.takeForAWalk();
-    	dog.takeForAWalk();
-	    dog.feed();
-    	dog.takeForAWalk();
-	    dog.takeForAWalk();
-    	dog.feed();
-	    dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-	    dog.feed();
-        dog.takeForAWalk();
+        System.out.println(me.pet.species);
+        System.out.println(me.personal.model);
+        System.out.println(me.personal.producer);
+
+//        dog.feed();
+//	    dog.feed();
+//	    dog.takeForAWalk();
+//    	dog.takeForAWalk();
+//	    dog.feed();
+//    	dog.takeForAWalk();
+//	    dog.takeForAWalk();
+//    	dog.feed();
+//	    dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//        dog.takeForAWalk();
+//	    dog.feed();
+//        dog.takeForAWalk();
 
 
     }

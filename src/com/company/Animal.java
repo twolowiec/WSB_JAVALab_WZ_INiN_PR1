@@ -2,7 +2,7 @@ package com.company;
 
 public class Animal {
     public final String species;
-    private Double weight;
+    private double weight;
     String name;
 
     public Animal(String species) {
@@ -30,15 +30,15 @@ public class Animal {
             this.weight *= 1.05;
             System.out.println("Mniam! Przytyłem: " + this.weight);
         } else {
-            System.out.println("Zwierzę już nie żyje!");
+            System.out.println(this.name+" już nie żyje!");
         }
     }
 
     void takeForAWalk() {
         if (this.weight > 0) {
-            this.weight -= 2.0;
+            this.weight -= 0.5;
             System.out.println("Hurra, spacer!!! Schudłem: " + this.weight);
-        } else System.out.println("Padłem na spacerze...");
+        } else System.out.println("Padłem i nie wstanę już...");
     }
 
     void printName() {
