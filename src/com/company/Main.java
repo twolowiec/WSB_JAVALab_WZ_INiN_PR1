@@ -4,13 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         Animal dog = new Animal("dog");
-        //        Animal cat = new Animal();
-        //        Animal mouse = new Animal();
+
         dog.name = "Szarik";
-// Zmiana na pole private - niedostępne
-//        dog.weight = 12.0;
-// Pole final - brak możliwości nadpisania
-//        dog.species = "Canis lupus familiaris";
 
         System.out.println(dog.name);
         System.out.println(dog.species);
@@ -33,31 +28,10 @@ public class Main {
         System.out.println(me.personal.model);
         System.out.println(me.personal.producer);
 
-//        dog.feed();
-//	    dog.feed();
-//	    dog.takeForAWalk();
-//    	dog.takeForAWalk();
-//	    dog.feed();
-//    	dog.takeForAWalk();
-//	    dog.takeForAWalk();
-//    	dog.feed();
-//	    dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//        dog.takeForAWalk();
-//	    dog.feed();
-//        dog.takeForAWalk();
-
+        me.setSalary(-1457.86);
+        me.setSalary(0);
+        me.setSalary(12000);
+        me.getSalary();
 
     }
 }
