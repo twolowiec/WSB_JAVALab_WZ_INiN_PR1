@@ -3,10 +3,14 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal();
+        Animal dog = new Animal("dog");
+        //        Animal cat = new Animal();
+        //        Animal mouse = new Animal();
         dog.name = "Szarik";
-        dog.weight = 12.0;
-        dog.species = "Canis lupus familiaris";
+// Zmiana na pole private - niedostępne
+//        dog.weight = 12.0;
+// Pole final - brak możliwości nadpisania
+//        dog.species = "Canis lupus familiaris";
 
         System.out.println(dog.name);
         System.out.println(dog.species);
@@ -17,7 +21,41 @@ public class Main {
         String text = dog.getNameAndOwner("Tomasz");
         System.out.println(text);
 
-//        Animal cat = new Animal();
-//        Animal mouse = new Animal();
+        Human me = new Human();
+        me.pet = dog;
+        me.firstName = "Tomasz";
+        me.lastName = "Wołowiec";
+
+        System.out.println(me.pet.species);
+
+        dog.feed();
+	    dog.feed();
+	    dog.takeForAWalk();
+    	dog.takeForAWalk();
+	    dog.feed();
+    	dog.takeForAWalk();
+	    dog.takeForAWalk();
+    	dog.feed();
+	    dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+	    dog.feed();
+        dog.takeForAWalk();
+
+
     }
 }

@@ -1,9 +1,45 @@
 package com.company;
 
 public class Animal {
-    String species;
-    Double weight;
+    public final String species;
+    private Double weight;
     String name;
+
+    public Animal(String species) {
+        this.species = species;
+        switch (this.species) {
+            case "dog":
+                this.weight = 22.0;
+                break;
+            case "cat":
+                this.weight = 5.0;
+                break;
+            case "horse":
+                this.weight = 190.0;
+                break;
+            default:
+                this.weight = 1.0;
+        }
+    }
+
+    void feed() {
+        if (this.weight > 0 && this.weight < 100) {
+            this.weight *= 1.1;
+            System.out.println("Mniam! Przytyłem: " + this.weight);
+        } else if (this.weight > 100) {
+            this.weight *= 1.05;
+            System.out.println("Mniam! Przytyłem: " + this.weight);
+        } else {
+            System.out.println("Zwierzę już nie żyje!");
+        }
+    }
+
+    void takeForAWalk() {
+        if (this.weight > 0) {
+            this.weight -= 2.0;
+            System.out.println("Hurra, spacer!!! Schudłem: " + this.weight);
+        } else System.out.println("Padłem na spacerze...");
+    }
 
     void printName() {
         System.out.println("Wabię się: " + this.name);
