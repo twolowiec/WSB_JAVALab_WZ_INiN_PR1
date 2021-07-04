@@ -45,7 +45,7 @@ public class Car extends Device {
         System.out.println("Otwórz CZ");
         System.out.println("Wsiądź do auta");
         System.out.println("Uruchom silnik ze stacyjki");
-        System.out.println("Wruuuum!!! Samochód uruchomiony.");
+        System.out.println("Wruuuum!!! Samochód uruchomiony. Zapnij pasy!");
     }
 
 }
