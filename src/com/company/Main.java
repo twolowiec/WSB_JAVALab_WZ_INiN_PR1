@@ -22,12 +22,9 @@ public class Main {
         Car passeratti = new Car("Volkswagen", "Passat", 2001);
         passeratti.value = 8000.00;
         me.setPersonal(passeratti);
-        me.getPersonal();
-
-        passeratti.turnOn();
 
         Car passat = new Car("Volkswagen", "Passat", 2001);
-        passat.value = 18000.00;
+        passat.value = 8000.00;
 // porównanie dwóch samochodów o tych samych wartościach pól
         System.out.println();
         System.out.println(passeratti == passat);
@@ -36,8 +33,13 @@ public class Main {
         System.out.println(passeratti.equals(passat));
         System.out.println();
 
-//        System.out.println(me.pet.species);
-        System.out.println(dog);
+        System.out.println(me.species);
+
+        System.out.println(me instanceof Animal);
+        System.out.println(me instanceof Human);
+        System.out.println(me instanceof Object);
+
+        passeratti.turnOn();
 
 
     }

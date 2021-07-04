@@ -24,11 +24,9 @@ public class Car extends Device {
     public boolean equals(Object o) {
         if (o instanceof Car) {
             Car car = (Car) o;
-            if (car.producer.equals(this.producer)
+            return car.producer.equals(this.producer)
                     && car.model.equals(this.model)
-                    && car.value.equals(this.value))
-                return true;
-            else return false;
+                    && car.value.equals(this.value);
         } else {
             return false;
         }
@@ -36,7 +34,7 @@ public class Car extends Device {
 
     @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.value;
+        return this.producer + " " + this.model + " " + this.value + " " + this.yearOfProduction;
     }
 
     @Override

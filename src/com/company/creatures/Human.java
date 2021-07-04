@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class Human extends Animal {
     private static final String HUMAN_SPECIES = "Homo Sapiens";
+
     public String firstName;
     public String lastName;
     public Phone phone;
