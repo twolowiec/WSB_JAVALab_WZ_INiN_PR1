@@ -6,6 +6,7 @@ public class Car {
     public double millage;
     public String fuel;
     public double ecv;
+    public double value;
 
 
     public Car(String producer, String model) {
