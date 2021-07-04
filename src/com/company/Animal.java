@@ -57,5 +57,9 @@ public class Animal {
         return owner + " posiada " + this.name;
     }
 
+    @Override
+    public String toString() {
+        return this.species + " " + this.name + " " + this.weight;
+    }
 
 }

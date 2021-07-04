@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.devices.Car;
+import com.company.devices.Phone;
+
 import java.util.Date;
 
 public class Human {
@@ -8,7 +11,7 @@ public class Human {
     Phone phone;
     Animal pet;
     private Car personal;
-    private double salary;
+    private Double salary;
 
     public Double getSalary() {
         System.out.println("Wysokośc wypłaty: " + salary);
@@ -42,4 +45,11 @@ public class Human {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
     }
+
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + " " + this.salary;
+    }
+
+
 }
