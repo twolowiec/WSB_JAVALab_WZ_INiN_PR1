@@ -11,7 +11,7 @@ public class Main {
 
         dog.name = "Szarik";
 
-        Human me = new Human();
+        Human me = new Human("Wołowiec");
         me.pet = dog;
         me.firstName = "Tomasz";
         me.lastName = "Wołowiec";

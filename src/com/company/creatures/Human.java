@@ -6,6 +6,7 @@ import com.company.devices.Phone;
 import java.util.Date;
 
 public class Human extends Animal {
+    private static final String HUMAN_SPECIES = "Homo Sapiens";
     public String firstName;
     public String lastName;
     public Phone phone;
@@ -14,7 +15,7 @@ public class Human extends Animal {
     private Double salary;
 
     public Human(String lastName) {
-        super("Homo Sapiens");
+        super(HUMAN_SPECIES);
         this.lastName = lastName;
     }
 
