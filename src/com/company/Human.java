@@ -34,9 +34,9 @@ public class Human {
     }
 
     public void setPersonal(Car personal) {
-        if (personal.value > this.salary) {
+        if (personal.value < this.salary) {
             System.out.println("Brawo! Kupiłeś samochód za gotówkę.");
-        } else if ((Double.valueOf(personal.value)/12) > this.salary) {
+        } else if ((personal.value/12) < this.salary) {
             System.out.println("Musiałeś finansować zakup za pożyczkę.");
         } else {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");

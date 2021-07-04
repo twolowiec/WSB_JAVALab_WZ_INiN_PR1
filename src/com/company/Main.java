@@ -21,8 +21,8 @@ public class Main {
         me.firstName = "Tomasz";
         me.lastName = "Wołowiec";
 
-        me.setSalary(-1457.86);
-        me.setSalary(0);
+//        me.setSalary(-1457.86);
+//        me.setSalary(0);
         me.setSalary(12000);
         me.getSalary();
 
@@ -30,6 +30,9 @@ public class Main {
         passeratti.value = 8000;
         me.setPersonal(passeratti);
         me.getPersonal();
+
+        Car passat = new Car("Volkswagen", "Passat");
+        passat.value = 8000;
 
 //        System.out.println(me.pet.species);
 
