@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.Human;
 import com.company.devices.Car;
 
 public class Main {
@@ -24,7 +26,7 @@ public class Main {
 
         passeratti.turnOn();
 
-        Car passat = new Car("Volkswagen", "Passat", 2006);
+        Car passat = new Car("Volkswagen", "Passat", 2001);
         passat.value = 18000.00;
 // porównanie dwóch samochodów o tych samych wartościach pól
         System.out.println();

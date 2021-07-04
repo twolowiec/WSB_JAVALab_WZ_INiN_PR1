@@ -1,17 +1,22 @@
-package com.company;
+package com.company.creatures;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 import java.util.Date;
 
-public class Human {
-    String firstName;
-    String lastName;
-    Phone phone;
-    Animal pet;
+public class Human extends Animal {
+    public String firstName;
+    public String lastName;
+    public Phone phone;
+    public Animal pet;
     private Car personal;
     private Double salary;
+
+    public Human(String lastName) {
+        super("Homo Sapiens");
+        this.lastName = lastName;
+    }
 
     public Double getSalary() {
         System.out.println("Wysokośc wypłaty: " + salary);

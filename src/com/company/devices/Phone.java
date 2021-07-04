@@ -3,8 +3,8 @@ package com.company.devices;
 public class Phone extends Device {
 //    String producer;
 //    String model;
-    Double screenSize;
-    String os;
+    public Double screenSize;
+    public String os;
 
     public Phone(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);

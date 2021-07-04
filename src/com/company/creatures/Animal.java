@@ -1,9 +1,9 @@
-package com.company;
+package com.company.creatures;
 
 public class Animal {
     public final String species;
     private double weight;
-    String name;
+    public String name;
 
     public Animal(String species) {
         this.species = species;
