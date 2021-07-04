@@ -17,13 +17,15 @@ public class Main {
         me.setSalary(12000);
         me.getSalary();
 
-        Car passeratti = new Car("Volkswagen", "Passat");
+        Car passeratti = new Car("Volkswagen", "Passat", 2001);
         passeratti.value = 8000.00;
         me.setPersonal(passeratti);
         me.getPersonal();
 
-        Car passat = new Car("Volkswagen", "Passat");
-        passat.value = 8000.00;
+        passeratti.turnOn();
+
+        Car passat = new Car("Volkswagen", "Passat", 2006);
+        passat.value = 18000.00;
 // porównanie dwóch samochodów o tych samych wartościach pól
         System.out.println();
         System.out.println(passeratti == passat);
