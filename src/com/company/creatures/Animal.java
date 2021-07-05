@@ -1,6 +1,8 @@
 package com.company.creatures;
 
-public class Animal {
+import com.company.Selleable;
+
+public class Animal implements Selleable {
     public final String species;
     private double weight;
     public String name;
@@ -60,6 +62,24 @@ public class Animal {
     @Override
     public String toString() {
         return this.species + " " + this.name + " " + this.weight;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("I już dzwonimy do płokułatuły!");
+        }
+        if (seller.pet != this) {
+            throw new Exception("Nie posiadasz tego zwierzęcia!");
+        }
+        if (buyer.cash < price) {
+            throw new Exception("No i co?! Gdzie forsa?!");
+        }
+        buyer.pet = this;
+        seller.pet = null;
+        buyer.cash -= price;
+        seller.cash += price;
+        System.out.println("A taki fajny był, amerykański");
     }
 
 }

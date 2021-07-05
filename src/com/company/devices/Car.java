@@ -1,6 +1,9 @@
 package com.company.devices;
 
-public class Car extends Device {
+import com.company.Selleable;
+import com.company.creatures.Human;
+
+public class Car extends Device implements Selleable {
 //    public final String producer;
 //    public final String model;
     public Double millage;
@@ -44,6 +47,17 @@ public class Car extends Device {
         System.out.println("Wsiądź do auta");
         System.out.println("Uruchom silnik ze stacyjki");
         System.out.println("Wruuuum!!! Samochód uruchomiony. Zapnij pasy!");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (seller.getPersonal() != this) {
+            throw new Exception(seller.firstName + " nie posiada " + seller.getPersonal());
+        } else if (buyer.cash < price) {
+            throw new Exception("Nie stać Cię na zakup " + seller.getPersonal() + " od " + seller.firstName);
+        } else {
+            throw new Exception("Gratuluje zakupu!");
+        }
     }
 
 }

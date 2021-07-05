@@ -3,18 +3,27 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Animal dog = new Animal("dog");
-
         dog.name = "Szarik";
+
+        Animal kon = new Animal("horse");
+        kon.name = "Rafał";
 
         Human me = new Human("Wołowiec");
         me.pet = dog;
         me.firstName = "Tomasz";
-        me.lastName = "Wołowiec";
+
+        Human daugther = new Human("Wołowiec");
+        daugther.firstName = "Oliwia";
+        System.out.println(daugther.toString());
+        daugther.pet = kon;
+        Human janusz = new Human("Janusz Handlarz");
+        janusz.cash = 1000.00;
 
         me.setSalary(12000);
         me.getSalary();
@@ -41,6 +50,10 @@ public class Main {
 
         passeratti.turnOn();
 
-
+        Phone phone = new Phone("Huaweii", "MARLib-Xv1", 2019);
+        me.phone = phone;
+        phone.sell(me,janusz,1200.00);
+        kon.sell(daugther,janusz,10000.50);
     }
+
 }

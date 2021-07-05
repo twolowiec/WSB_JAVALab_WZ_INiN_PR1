@@ -1,7 +1,10 @@
 package com.company.devices;
 
-public class Phone extends Device {
-//    String producer;
+import com.company.Selleable;
+import com.company.creatures.Human;
+
+public class Phone extends Device implements Selleable {
+    //    String producer;
 //    String model;
     public Double screenSize;
     public String os;
@@ -21,5 +24,20 @@ public class Phone extends Device {
         System.out.println("Wciśnij i przytrzymaj przycisk zasilania.");
         System.out.println("Ładowanie Systemu Operacyjnego...");
         System.out.println("Urządzenie uruchomione");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.phone != null && buyer.cash > price) {
+            buyer.phone = seller.phone;
+            seller.phone = null;
+            buyer.cash -= price;
+            seller.cash += price;
+            System.out.println("Brawo! " + buyer.firstName + " kupiłeś " + buyer.phone + " od " + seller.firstName);
+        } else if (seller.phone != this) {
+            System.out.println("Uważaj! " + seller.firstName + " chyba chce Ci sprzedać cegłę. Nie posiada " + seller.phone);
+        } else if (buyer.cash < price) {
+            System.out.println("Z czym do ludzi?! Nie stac się na zakup " + seller.phone + "!");
+        }
     }
 }

@@ -14,6 +14,7 @@ public class Human extends Animal {
     public Animal pet;
     private Car personal;
     private Double salary;
+    public Double cash;
 
     public Human(String lastName) {
         super(HUMAN_SPECIES);
