@@ -15,7 +15,7 @@ public class Phone extends Device implements Selleable {
 
     @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.screenSize + " " + this.os;
+        return this.producer + " " + this.model;
     }
 
     @Override
@@ -33,11 +33,11 @@ public class Phone extends Device implements Selleable {
             seller.phone = null;
             buyer.cash -= price;
             seller.cash += price;
-            System.out.println("Brawo! " + buyer.firstName + " kupiłeś " + buyer.phone + " od " + seller.firstName);
+            System.out.println("Brawo! " + buyer.firstName + " kupiłeś " + buyer.phone.toString() + " od " + seller.firstName);
         } else if (seller.phone != this) {
-            System.out.println("Uważaj! " + seller.firstName + " chyba chce Ci sprzedać cegłę. Nie posiada " + seller.phone);
+            System.out.println("Uważaj! " + seller.firstName + " chyba chce Ci sprzedać cegłę. Nie posiada " + seller.phone.toString());
         } else if (buyer.cash < price) {
-            System.out.println("Z czym do ludzi?! Nie stac się na zakup " + seller.phone + "!");
+            System.out.println("Z czym do ludzi?! Nie stac się na zakup " + seller.phone.toString() + "!");
         }
     }
 }

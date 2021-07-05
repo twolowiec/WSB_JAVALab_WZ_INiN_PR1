@@ -22,8 +22,10 @@ public class Main {
         daugther.firstName = "Oliwia";
         System.out.println(daugther.toString());
         daugther.pet = kon;
-        Human janusz = new Human("Janusz Handlarz");
-        janusz.cash = 1000.00;
+        Human janusz = new Human("Handlarz");
+        janusz.firstName = "Janusz";
+        me.cash = 0.00;
+        janusz.cash = 2000.00;
 
         me.setSalary(12000);
         me.getSalary();
@@ -50,10 +52,14 @@ public class Main {
 
         passeratti.turnOn();
 
-        Phone phone = new Phone("Huaweii", "MARLib-Xv1", 2019);
-        me.phone = phone;
-        phone.sell(me,janusz,1200.00);
-        kon.sell(daugther,janusz,10000.50);
+        Phone smartphone = new Phone("Huaweii", "MARLib-Xv1", 2019);
+        me.phone = smartphone;
+        System.out.println("Kasa Tomka przed transackją: " + me.cash);
+        smartphone.sell(me, janusz, 1200.00);
+        System.out.println("Kasa Janusza po transackji: " + janusz.cash);
+        System.out.println("Kasa Tomka po transackji: " + me.cash);
+        kon.sell(daugther, janusz, 10000.50);
+        System.out.println("Kasa Janusza po transackji: " + janusz.cash);
     }
 
 }

@@ -2,7 +2,7 @@ package com.company.creatures;
 
 import com.company.Selleable;
 
-public class Animal implements Selleable {
+public class Animal implements Selleable, Feedable {
     public final String species;
     private double weight;
     public String name;
@@ -30,6 +30,15 @@ public class Animal implements Selleable {
             System.out.println("Mniam! Przytyłem: " + this.weight);
         } else if (this.weight > 100) {
             this.weight *= 1.05;
+            System.out.println("Mniam! Przytyłem: " + this.weight);
+        } else {
+            System.out.println(this.name+" już nie żyje!");
+        }
+    }
+
+    public void feed(Double foodWeight) {
+        if (this.weight > 0 ) {
+            this.weight += foodWeight;
             System.out.println("Mniam! Przytyłem: " + this.weight);
         } else {
             System.out.println(this.name+" już nie żyje!");
