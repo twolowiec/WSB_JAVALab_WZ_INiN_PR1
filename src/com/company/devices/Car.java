@@ -3,7 +3,7 @@ package com.company.devices;
 import com.company.Selleable;
 import com.company.creatures.Human;
 
-public class Car extends Device implements Selleable {
+public class Car extends Device implements Selleable{
 //    public final String producer;
 //    public final String model;
     public Double millage;
@@ -16,20 +16,20 @@ public class Car extends Device implements Selleable {
         super(producer,model,yearOfProduction);
     }
 
-    public Car(String producer, String model, Integer yearOfProduction, Double millage, String fuel, Double ecv, Double value) {
-        super(producer,model,yearOfProduction);
-        this.millage = millage;
-        this.fuel = fuel;
-        this.ecv = ecv;
-        this.value = value;
-    }
+//    public Car(String producer, String model, Integer yearOfProduction, Double millage, String fuel, Double ecv, Double value) {
+//        super(producer,model,yearOfProduction);
+//        this.millage = millage;
+//        this.fuel = fuel;
+//        this.ecv = ecv;
+//        this.value = value;
+//    }
 
     public boolean equals(Object o) {
         if (o instanceof Car) {
             Car car = (Car) o;
             return car.producer.equals(this.producer)
                     && car.model.equals(this.model)
-                    && car.value.equals(this.value);
+                    && car.yearOfProduction.equals(this.yearOfProduction);
         } else {
             return false;
         }
@@ -56,7 +56,11 @@ public class Car extends Device implements Selleable {
         } else if (buyer.cash < price) {
             throw new Exception("Nie stać Cię na zakup " + seller.getPersonal() + " od " + seller.firstName);
         } else {
-            throw new Exception("Gratuluje zakupu!");
+            System.out.println("Gratuluje zakupu "+seller.getPersonal()+ "!");
+            buyer.buyCar(seller.getPersonal());
+            seller.sellCar();
+            buyer.cash -= price;
+            seller.cash += price;
         }
     }
 

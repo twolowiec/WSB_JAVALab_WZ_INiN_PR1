@@ -1,5 +1,7 @@
 package com.company.creatures;
 
+import com.company.Selleable;
+import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -44,14 +46,21 @@ public class Human extends Animal {
         return personal;
     }
 
-    public void setPersonal(Car personal) {
-        if (personal.value < this.salary) {
+    public void setPersonal(Car car) {
+        if (car.value < this.salary) {
             System.out.println("Brawo! Kupiłeś samochód za gotówkę.");
-        } else if ((personal.value/12) < this.salary) {
+            buyCar(car);
+        } else if ((car.value/12) < this.salary) {
             System.out.println("Musiałeś finansować zakup za pożyczkę.");
-        } else {
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
-        }
+            buyCar(car);
+        } else System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
+    }
+
+    public Car buyCar(Car car) {
+        return this.personal=car;
+    }
+    public Car sellCar() {
+        return this.personal = null;
     }
 
     @Override
