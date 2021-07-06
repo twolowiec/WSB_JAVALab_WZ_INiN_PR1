@@ -2,12 +2,12 @@ package com.company.creatures;
 
 import com.company.Selleable;
 
-public class Animal implements Selleable, Feedable {
+public abstract class Animal implements Selleable, Feedable {
     public final String species;
     private double weight;
     public String name;
 
-    public Animal(String species) {
+    Animal(String species) {
         this.species = species;
         switch (this.species) {
             case "dog":
@@ -45,18 +45,18 @@ public class Animal implements Selleable, Feedable {
         }
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if (this.weight > 0) {
             this.weight -= 0.5;
             System.out.println("Hurra, spacer!!! Schudłem: " + this.weight);
         } else System.out.println("Padłem i nie wstanę już...");
     }
 
-    void printName() {
+    public void printName() {
         System.out.println("Wabię się: " + this.name);
     }
 
-    void printNameAndOwner(String owner) {
+    public void printNameAndOwner(String owner) {
         System.out.println(owner + " jest właścicielem " + this.name);
     }
 

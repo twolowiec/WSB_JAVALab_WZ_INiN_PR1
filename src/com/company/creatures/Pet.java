@@ -1,5 +1,8 @@
 package com.company.creatures;
 
-public class Pet {
+public class Pet extends Animal {
 
+    public Pet(String species) {
+        super(species);
+    }
 }

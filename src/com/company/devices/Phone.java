@@ -3,11 +3,18 @@ package com.company.devices;
 import com.company.Selleable;
 import com.company.creatures.Human;
 
+import java.net.URL;
+
 public class Phone extends Device implements Selleable {
     //    String producer;
 //    String model;
     public Double screenSize;
     public String os;
+
+    public String appName;
+    static final String serverAdress = "216.58.209.14";
+    static final String protocol = "";
+    static final String appVersion = "";
 
     public Phone(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
@@ -39,5 +46,27 @@ public class Phone extends Device implements Selleable {
         } else if (buyer.cash < price) {
             System.out.println("Z czym do ludzi?! Nie stac się na zakup " + seller.phone.toString() + "!");
         }
+    }
+
+    public void installAnnApp(String appName) {
+        System.out.println("Instaluje aplikację: " + appName);
+    }
+
+    public void installAnnApp(String appName, String appVersion) {
+        System.out.println("Instaluje aplikację "+appName+" w wersji "+appVersion);
+    }
+
+    public void installAnnApp(String appName, String appVersion, String serverAdress) {
+        System.out.println("Instaluje aplikację " + appName + " w wersji " + appVersion + " z serwera " + serverAdress);
+    }
+
+    public void installAnnApp(String[] apps) {
+        for (String app : apps) {
+            System.out.println(app + " oczekuje na instalacje");
+        }
+    }
+
+    public void installAnnApp(URL adress) {
+        System.out.println("Aplikacja zainstalowana z: " + adress);
     }
 }

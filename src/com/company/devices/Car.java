@@ -3,7 +3,7 @@ package com.company.devices;
 import com.company.Selleable;
 import com.company.creatures.Human;
 
-public class Car extends Device implements Selleable{
+public abstract class Car extends Device implements Selleable{
 //    public final String producer;
 //    public final String model;
     public Double millage;
@@ -12,7 +12,7 @@ public class Car extends Device implements Selleable{
     public Double value;
 
 
-    public Car(String producer, String model, Integer yearOfProduction) {
+    Car(String producer, String model, Integer yearOfProduction) {
         super(producer,model,yearOfProduction);
     }
 
@@ -63,5 +63,7 @@ public class Car extends Device implements Selleable{
             seller.cash += price;
         }
     }
+
+    public abstract void refuel();
 
 }

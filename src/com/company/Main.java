@@ -2,16 +2,19 @@ package com.company;
 
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
+import com.company.devices.Diesel;
+import com.company.devices.LPG;
 import com.company.devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        Animal dog = new Animal("dog");
+        Pet dog = new Pet("dog");
         dog.name = "Szarik";
 
-        Animal kon = new Animal("horse");
+        Pet kon = new Pet("horse");
         kon.name = "Rafał";
 
         Human me = new Human("Wołowiec");
@@ -31,12 +34,12 @@ public class Main {
         me.setSalary(12000);
         me.getSalary();
 
-        Car passeratti = new Car("Volkswagen", "Passat", 2001);
+        LPG passeratti = new LPG("Volkswagen", "Passat", 2001);
         passeratti.value = 8000.00;
         me.setPersonal(passeratti);
         System.out.println(me.getPersonal().toString());
         System.out.println(me.getPersonal());
-        Car passat = new Car("Volkswagen", "Passat", 2001);
+        Diesel passat = new Diesel("Volkswagen", "Passat", 2001);
         passat.value = 8000.00;
 // porównanie dwóch samochodów o tych samych wartościach pól
 //        System.out.println();
