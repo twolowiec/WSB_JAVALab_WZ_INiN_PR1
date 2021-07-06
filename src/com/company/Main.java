@@ -63,11 +63,18 @@ public class Main {
         smartphone.sell(me, janusz, 1200.00);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
         System.out.println("Kasa Tomka po transackji: " + me.cash);
-        passeratti.sell(me,janusz,8000.00);
+        passeratti.sell(me, janusz, 8000.00);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
         System.out.println("Kasa Tomka po transackji: " + me.cash);
         kon.sell(daugther, janusz, 10000.50);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
+
+        String[] apps = {"YouTube", "Firebase", "Revolut", "MojaWSB", "Play24", "GooglePay"};
+        smartphone.installAnnApp("Apka");
+        smartphone.installAnnApp("Apka", "1.05");
+        smartphone.installAnnApp("Apka", "1.01", "play.google.com");
+        smartphone.installAnnApp(apps);
+
     }
 
 }

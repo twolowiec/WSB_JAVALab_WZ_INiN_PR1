@@ -13,8 +13,8 @@ public class Phone extends Device implements Selleable {
 
     public String appName;
     static final String serverAdress = "216.58.209.14";
-    static final String protocol = "";
-    static final String appVersion = "";
+    static final String protocol = "https://";
+    static final String appVersion = "1.01";
 
     public Phone(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
