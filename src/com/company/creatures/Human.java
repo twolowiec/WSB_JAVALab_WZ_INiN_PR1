@@ -1,10 +1,9 @@
 package com.company.creatures;
 
-import com.company.Selleable;
-import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Human extends Animal {
@@ -14,13 +13,15 @@ public class Human extends Animal {
     public String lastName;
     public Phone phone;
     public Animal pet;
-    private Car personal;
+    public Car[] garage;
     private Double salary;
     public Double cash;
 
-    public Human(String lastName) {
+
+    public Human(String lastName, Integer garageSize) {
         super(HUMAN_SPECIES);
         this.lastName = lastName;
+        this.garage = new Car[garageSize];
     }
 
     public Double getSalary() {
@@ -42,25 +43,26 @@ public class Human extends Animal {
         }
     }
 
-    public Car getPersonal() {
-        return personal;
+    public Car getPersonal(int position) {
+        return this.garage[position];
     }
 
-    public void setPersonal(Car car) {
+    public void setPersonal(Car car, int position) {
         if (car.value < this.salary) {
             System.out.println("Brawo! Kupiłeś samochód za gotówkę.");
-            buyCar(car);
-        } else if ((car.value/12) < this.salary) {
+            insertCar(car, position);
+        } else if ((car.value / 12) < this.salary) {
             System.out.println("Musiałeś finansować zakup za pożyczkę.");
-            buyCar(car);
+            insertCar(car, position);
         } else System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
     }
 
-    public Car buyCar(Car car) {
-        return this.personal=car;
+    public Car insertCar(Car car, int position) {
+        return this.garage[position] = car;
     }
-    public Car sellCar() {
-        return this.personal = null;
+
+    public Car removeCar(int position) {
+        return this.garage[position] = null;
     }
 
     @Override
@@ -68,5 +70,24 @@ public class Human extends Animal {
         return this.firstName + " " + this.lastName + " " + this.salary;
     }
 
+    public void getGarageValue() {
+        double valueSum = 0;
+        for (Car car : garage) {
+            if (car != null) {
+                valueSum += car.value;
+            }
+        }
+        System.out.println("Wartość aut w garażu to: " + valueSum);
+    }
+
+    public void getGarageItems() {
+        for (Car car : garage)
+            if (car == null) System.out.println("Wolne miejsce");
+            else System.out.println(car.toString());
+    }
+
+    public void sortByAge() {
+        Arrays.sort(garage);
+    }
 
 }

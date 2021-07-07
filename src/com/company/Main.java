@@ -17,16 +17,19 @@ public class Main {
         Pet kon = new Pet("horse");
         kon.name = "Rafał";
 
-        Human me = new Human("Wołowiec");
+        Human me = new Human("Wołowiec", 5);
+        System.out.println(me.garage.length);
         me.pet = dog;
         me.firstName = "Tomasz";
 
-        Human daugther = new Human("Wołowiec");
+        Human daugther = new Human("Wołowiec", 0);
         daugther.firstName = "Oliwia";
         System.out.println(daugther.toString());
         daugther.pet = kon;
-        Human janusz = new Human("Handlarz");
+        Human janusz = new Human("Handlarz", 3);
         janusz.firstName = "Janusz";
+        System.out.println(janusz.garage.length);
+
         me.cash = 0.00;
         janusz.cash = 20000.00;
         janusz.setSalary(5000.00);
@@ -36,11 +39,14 @@ public class Main {
 
         LPG passeratti = new LPG("Volkswagen", "Passat", 2001);
         passeratti.value = 8000.00;
-        me.setPersonal(passeratti);
-        System.out.println(me.getPersonal().toString());
-        System.out.println(me.getPersonal());
-        Diesel passat = new Diesel("Volkswagen", "Passat", 2001);
-        passat.value = 8000.00;
+        me.setPersonal(passeratti,0);
+        me.getPersonal(0);
+        System.out.println(me.getPersonal(0).toString());
+        System.out.println(me.getPersonal(0));
+        Diesel passat = new Diesel("Volkswagen", "Passat", 2006);
+        passat.value = 11000.00;
+        me.setPersonal(passat, 1);
+
 // porównanie dwóch samochodów o tych samych wartościach pól
 //        System.out.println();
 //        System.out.println(passeratti == passat);
@@ -51,14 +57,19 @@ public class Main {
 
         System.out.println(me.species);
 
+        me.getGarageItems();
+        janusz.getGarageItems();
+        me.getGarageValue();
+
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Human);
 //        System.out.println(me instanceof Object);
 
-        passeratti.turnOn();
+//        passeratti.turnOn();
 
         Phone smartphone = new Phone("Huaweii", "MARLib-Xv1", 2019);
         me.phone = smartphone;
+
         System.out.println("Kasa Tomka przed transackją: " + me.cash);
         smartphone.sell(me, janusz, 1200.00);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
@@ -69,11 +80,18 @@ public class Main {
         kon.sell(daugther, janusz, 10000.50);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
 
-        String[] apps = {"YouTube", "Firebase", "Revolut", "MojaWSB", "Play24", "GooglePay"};
-        smartphone.installAnnApp("Apka");
-        smartphone.installAnnApp("Apka", "1.05");
-        smartphone.installAnnApp("Apka", "1.01", "play.google.com");
-        smartphone.installAnnApp(apps);
+
+        me.getGarageItems();
+        me.getGarageValue();
+
+        janusz.getGarageItems();
+        janusz.getGarageValue();
+
+//        String[] apps = {"YouTube", "Firebase", "Revolut", "MojaWSB", "Play24", "GooglePay"};
+//        smartphone.installAnnApp("Apka");
+//        smartphone.installAnnApp("Apka", "1.05");
+//        smartphone.installAnnApp("Apka", "1.01", "play.google.com");
+//        smartphone.installAnnApp(apps);
 
     }
 
