@@ -12,6 +12,10 @@ public abstract class Device {
         this.yearOfProduction = yearOfProduction;
     }
 
+    public Integer getYearOfProduction() {
+        return this.yearOfProduction;
+    }
+
     @Override
     public String toString() {
         return this.producer + " " + this.model + " " + this.yearOfProduction;

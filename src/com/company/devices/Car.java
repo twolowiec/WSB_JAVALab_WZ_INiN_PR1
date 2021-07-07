@@ -3,28 +3,32 @@ package com.company.devices;
 import com.company.Selleable;
 import com.company.creatures.Human;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Objects;
 
-public abstract class Car extends Device implements Selleable {
+public abstract class Car extends Device implements Selleable, Comparator<Car> {
     //    public final String producer;
 //    public final String model;
     public Double millage;
     public String fuel;
     public Double ecv;
 //    public Double value;
+
+    ArrayList<Human> owners = new ArrayList<Human>();
 //
 
     Car(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
     }
 
-//    public Car(String producer, String model, Integer yearOfProduction, Double millage, String fuel, Double ecv, Double value) {
-//        super(producer,model,yearOfProduction);
-//        this.millage = millage;
-//        this.fuel = fuel;
-//        this.ecv = ecv;
-//        this.value = value;
-//    }
+    public Car(String producer, String model, Integer yearOfProduction, Double millage, String fuel, Double ecv, Double value) {
+        super(producer,model,yearOfProduction);
+        this.millage = millage;
+        this.fuel = fuel;
+        this.ecv = ecv;
+        this.value = value;
+    }
 
     public boolean equals(Object o) {
         if (o instanceof Car) {
@@ -86,6 +90,11 @@ public abstract class Car extends Device implements Selleable {
         buyer.cash -= price;
         seller.cash += price;
 
+    }
+
+    @Override
+    public int compare(Car o1, Car o2) {
+        return o1.yearOfProduction - o2.yearOfProduction;
     }
 
     public abstract void refuel();

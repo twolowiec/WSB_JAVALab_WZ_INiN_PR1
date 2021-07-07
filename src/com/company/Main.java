@@ -58,8 +58,10 @@ public class Main {
         System.out.println(me.species);
 
         me.getGarageItems();
-        janusz.getGarageItems();
+//        janusz.getGarageItems();
         me.getGarageValue();
+
+        me.sortByAge();
 
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Human);
@@ -81,11 +83,13 @@ public class Main {
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
 
 
-        me.getGarageItems();
-        me.getGarageValue();
+//        me.getGarageItems();
+//        me.getGarageValue();
 
-        janusz.getGarageItems();
-        janusz.getGarageValue();
+//        janusz.getGarageItems();
+//        janusz.getGarageValue();
+
+
 
 //        String[] apps = {"YouTube", "Firebase", "Revolut", "MojaWSB", "Play24", "GooglePay"};
 //        smartphone.installAnnApp("Apka");
