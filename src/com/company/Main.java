@@ -18,35 +18,39 @@ public class Main {
         kon.name = "Rafał";
 
         Human me = new Human("Wołowiec", 5);
-        System.out.println(me.garage.length);
-        me.pet = dog;
+        System.out.println(me.garage.length + "\n");
+//        me.pet = dog;
         me.firstName = "Tomasz";
 
         Human daugther = new Human("Wołowiec", 0);
         daugther.firstName = "Oliwia";
-        System.out.println(daugther.toString());
+//        System.out.println(daugther.toString());
         daugther.pet = kon;
         Human janusz = new Human("Handlarz", 3);
         janusz.firstName = "Janusz";
-        System.out.println(janusz.garage.length);
+//        System.out.println(janusz.garage.length);
 
         me.cash = 0.00;
         janusz.cash = 20000.00;
         janusz.setSalary(5000.00);
+        System.out.println("");
         daugther.cash = 0.00;
         me.setSalary(12000);
-        me.getSalary();
+        System.out.println("");
+//        me.getSalary();
 
         LPG passeratti = new LPG("Volkswagen", "Passat", 2001);
         passeratti.value = 8000.00;
-        me.setPersonal(passeratti,0);
-        me.getPersonal(0);
+        me.setPersonal(passeratti, 0);
+//        me.getPersonal(0);
         System.out.println(me.getPersonal(0).toString());
         System.out.println(me.getPersonal(0));
         Diesel passat = new Diesel("Volkswagen", "Passat", 2006);
         passat.value = 11000.00;
+        System.out.println("");
+        System.out.println("Czy " + passat + " ma własciciela: " + passat.isOwner());
         me.setPersonal(passat, 1);
-
+        System.out.println("Czy " + passat + " ma własciciela: " + passat.isOwner());
 // porównanie dwóch samochodów o tych samych wartościach pól
 //        System.out.println();
 //        System.out.println(passeratti == passat);
@@ -55,14 +59,16 @@ public class Main {
 //        System.out.println(passeratti.equals(passat));
 //        System.out.println();
 
-        System.out.println(me.species);
-
+//        System.out.println(me.species);
+        System.out.println("");
         me.getGarageItems();
-//        janusz.getGarageItems();
+        System.out.println("");
+        janusz.getGarageItems();
+        System.out.println("");
         me.getGarageValue();
-
+        System.out.println("");
         me.sortByAge();
-
+        System.out.println("");
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Human);
 //        System.out.println(me instanceof Object);
@@ -82,21 +88,23 @@ public class Main {
         kon.sell(daugther, janusz, 10000.50);
         System.out.println("Kasa Janusza po transackji: " + janusz.cash);
 
-
+        passeratti.checkChangeOwnership(me, janusz);
 //        me.getGarageItems();
 //        me.getGarageValue();
 
 //        janusz.getGarageItems();
 //        janusz.getGarageValue();
 
-
-
+        System.out.println("");
+        System.out.println("Ilość transakcji dla " + passeratti + ": " + passeratti.countTransactionsByCar());
 //        String[] apps = {"YouTube", "Firebase", "Revolut", "MojaWSB", "Play24", "GooglePay"};
 //        smartphone.installAnnApp("Apka");
 //        smartphone.installAnnApp("Apka", "1.05");
 //        smartphone.installAnnApp("Apka", "1.01", "play.google.com");
 //        smartphone.installAnnApp(apps);
 
+        System.out.println();
+        System.out.println("Czy " + me + " był włascicielem " + passeratti + ": " + passeratti.wasHeOwner(me));
     }
 
 }

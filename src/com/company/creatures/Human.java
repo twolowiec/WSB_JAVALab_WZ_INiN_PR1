@@ -54,9 +54,11 @@ public class Human extends Animal {
         if (car.value < this.salary) {
             System.out.println("Brawo! Kupiłeś samochód za gotówkę.");
             insertCar(car, position);
+            car.setNewOwner(this);
         } else if ((car.value / 12) < this.salary) {
             System.out.println("Musiałeś finansować zakup za pożyczkę.");
             insertCar(car, position);
+            car.setNewOwner(this);
         } else System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
     }
 
@@ -70,7 +72,7 @@ public class Human extends Animal {
 
     @Override
     public String toString() {
-        return this.firstName + " " + this.lastName + " " + this.salary;
+        return this.firstName + " " + this.lastName;
     }
 
     public void getGarageValue() {
@@ -96,5 +98,7 @@ public class Human extends Animal {
         }
 
     }
+
+
 
 }

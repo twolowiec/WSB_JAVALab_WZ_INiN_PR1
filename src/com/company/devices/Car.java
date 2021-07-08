@@ -23,7 +23,7 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
     }
 
     public Car(String producer, String model, Integer yearOfProduction, Double millage, String fuel, Double ecv, Double value) {
-        super(producer,model,yearOfProduction);
+        super(producer, model, yearOfProduction);
         this.millage = millage;
         this.fuel = fuel;
         this.ecv = ecv;
@@ -43,7 +43,7 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
 
     @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.value + " " + this.yearOfProduction;
+        return this.producer + " " + this.model + " " + this.yearOfProduction + " " + this.value;
     }
 
     @Override
@@ -89,6 +89,7 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
         seller.removeCar(sellerCarPlace);
         buyer.cash -= price;
         seller.cash += price;
+        this.setNewOwner(buyer);
 
     }
 
@@ -98,5 +99,38 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
     }
 
     public abstract void refuel();
+
+    public void setNewOwner(Human owner) {
+        this.owners.add(owner);
+    }
+
+    public boolean wasHeOwner(Human owner) {
+        if (this.owners.contains(owner))
+            return true;
+        else
+            return false;
+    }
+
+    public boolean isOwner() {
+        if (this.owners.isEmpty())
+            return false;
+        else
+            return true;
+    }
+
+    public void checkChangeOwnership(Human seller, Human buyer) {
+        for (int i = 0; i < this.owners.size()-1; i++) {
+            if (this.owners.get(i) == seller && this.owners.get(i + 1) == buyer) {
+                System.out.println(buyer + " nabył pojazd od " + seller);
+                break;
+            } else
+                System.out.println("Nie posiadamy zapisu takiej transakcji.");
+        }
+
+    }
+
+    public Integer countTransactionsByCar() {
+        return this.owners.size();
+    }
 
 }
