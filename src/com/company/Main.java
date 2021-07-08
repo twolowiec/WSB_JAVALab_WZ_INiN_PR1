@@ -105,6 +105,8 @@ public class Main {
 
         System.out.println();
         System.out.println("Czy " + me + " był włascicielem " + passeratti + ": " + passeratti.wasHeOwner(me));
+        System.out.println();
+        passeratti.getTransactions();
     }
 
 }

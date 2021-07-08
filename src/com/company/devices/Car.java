@@ -1,6 +1,7 @@
 package com.company.devices;
 
 import com.company.Selleable;
+import com.company.Transactions;
 import com.company.creatures.Human;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
 //    public Double value;
 
     ArrayList<Human> owners = new ArrayList<Human>();
+    ArrayList<Transactions> listOfTransactions = new ArrayList<>();
 //
 
     Car(String producer, String model, Integer yearOfProduction) {
@@ -90,7 +92,7 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
         buyer.cash -= price;
         seller.cash += price;
         this.setNewOwner(buyer);
-
+        addTransaction(seller,buyer,price);
     }
 
     @Override
@@ -133,4 +135,14 @@ public abstract class Car extends Device implements Selleable, Comparator<Car> {
         return this.owners.size();
     }
 
+    public void addTransaction (Human seller, Human buyer, Double price) {
+        Transactions transactions = new Transactions(seller,buyer,price);
+        listOfTransactions.add(transactions);
+    }
+
+    public void getTransactions () {
+        for(Transactions transaction : listOfTransactions) {
+            System.out.println(transaction);
+        }
+    }
 }
