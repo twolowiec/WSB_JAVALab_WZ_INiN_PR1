@@ -4,6 +4,12 @@ import com.company.Selleable;
 import com.company.creatures.Human;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+import static java.util.Collections.*;
 
 public class Phone extends Device implements Selleable {
     //    String producer;
@@ -15,6 +21,8 @@ public class Phone extends Device implements Selleable {
     static final String serverAdress = "216.58.209.14";
     static final String protocol = "https://";
     static final String appVersion = "1.01";
+
+    ArrayList<Application> appsList = new ArrayList<>();
 
     public Phone(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
@@ -53,7 +61,7 @@ public class Phone extends Device implements Selleable {
     }
 
     public void installAnnApp(String appName, String appVersion) {
-        System.out.println("Instaluje aplikację "+appName+" w wersji "+appVersion);
+        System.out.println("Instaluje aplikację " + appName + " w wersji " + appVersion);
     }
 
     public void installAnnApp(String appName, String appVersion, String serverAdress) {
@@ -68,5 +76,50 @@ public class Phone extends Device implements Selleable {
 
     public void installAnnApp(URL adress) {
         System.out.println("Aplikacja zainstalowana z: " + adress);
+    }
+
+    public void appInstaler(Human owner, Application app) {
+        if (owner.cash >= app.price) {
+            appsList.add(app);
+            owner.cash -= app.price;
+            System.out.println("Zainstalowano: " + app.name);
+        } else System.out.println("Przykro mi nie posiadasz wystarczająco dużo pieniędzy.");
+    }
+
+    public Boolean isInstaled(Application app) {
+        return this.appsList.contains(app);
+    }
+
+    public Boolean isInstaledByName(String appName) {
+        return this.appsList.toString().contains(appName);
+    }
+
+    public void getFreeApps() {
+        for (Application app : appsList) {
+            if (app.price == 0.0)
+                System.out.println(app);
+        }
+    }
+
+    public Double installedAppsValue() {
+        double sum = 0;
+        for (Application app : appsList) {
+            sum += app.price;
+        }
+        return sum;
+    }
+
+    public void sortAppsByName() {
+        appsList.sort(Comparator.comparing(Application::getName));
+        for (Application app : appsList) {
+            System.out.println(app.name);
+        }
+    }
+
+    public void sortAppsByPrice() {
+        appsList.sort(Comparator.comparing(Application::getPrice));
+        for (Application app : appsList) {
+            System.out.println(app.name);
+        }
     }
 }
